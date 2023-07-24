@@ -18,13 +18,11 @@
 		e?.preventDefault();
 		if (pen_down) {
 			y_offset = y_start - e.pageY;
-			console.log(y_offset);
 		}
 	};
 
 	const mouseup = (e: MouseEvent) => {
 		pen_down = false;
-		// y_left = y_offset;
 		touchend(e as any);
 	};
 
@@ -34,18 +32,19 @@
 	};
 
 	const touchmove = (e: TouchEvent) => {
-		console.log(e);
 		if (pen_down) {
 			y_offset = y_start - e.changedTouches[0].pageY;
 		}
 	};
 
+	$: max_height = (window_height / 8) * 7;
+	$: min_height = window_height / 4;
+
 	const touchend = (e: TouchEvent) => {
 		pen_down = false;
-		console.log('pustena vyska', y_offset - y_left);
 
 		if (y_offset - y_left > 100) {
-			y_offset = window_height - window_height / 4;
+			y_offset = max_height - min_height;
 			last_snap = y_offset;
 		} else if (y_offset - y_left < -100) {
 			y_offset = 0;
@@ -57,9 +56,7 @@
 		y_left = y_offset;
 	};
 
-	// $: console.log('height', y_offset - y_left);
-
-	$: height = Math.min(Math.max(y_offset + window_height / 4, window_height / 4), window_height);
+	$: height = Math.min(Math.max(y_offset + min_height, min_height), max_height);
 </script>
 
 <svelte:window
@@ -70,14 +67,19 @@
 	on:touchend={touchend}
 />
 
-<div class="bg-white z-50 pt-0 flex flex-col transition-all ease-linear" style="height: {height}px">
-	<!-- <div
-	class="bg-white z-50 p-6 pt-0 flex flex-col absolute left-0 w-full bg-red-400"
-	style="top: {-y_offset}px;"
-> -->
+<div
+	class="bg-white z-50 pt-0 flex flex-col transition-all ease-out"
+	style="height: {height}px; transition-duration: {pen_down ? 0 : 300}ms"
+>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="self-center p-4 cursor-grab" on:mousedown={mousedown} on:touchstart={touchstart}>
-		<div class="border-black border-t-4 rounded-full w-[4rem]" />
+	<div
+		class="self-center p-4 cursor-grab"
+		on:mousedown={mousedown}
+		on:touchstart|passive={touchstart}
+	>
+		<div class="border-slate-400 border-t-4 rounded-full w-[4rem]" />
 	</div>
-	<div>ahoj</div>
+	<div class="flex-grow overflow-auto">
+		<slot />
+	</div>
 </div>

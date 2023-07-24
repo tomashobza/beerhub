@@ -47,8 +47,6 @@
 
 		var marker = L.marker([coords.latitude, coords.longitude]).addTo(map);
 		map.setView([coords.latitude, coords.longitude]);
-
-		console.log(coords);
 	});
 
 	onDestroy(() => {

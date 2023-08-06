@@ -4,7 +4,7 @@
 
 	import { onDestroy, onMount } from 'svelte';
 
-	import toast, { Toaster } from 'svelte-french-toast';
+	import toast from 'svelte-french-toast';
 
 	let map_container: HTMLElement;
 	let map: Map;
@@ -57,5 +57,3 @@
 <svelte:window on:resize={resizeMap} />
 
 <div class="w-full flex-grow rounded-b-3xl z-0" bind:this={map_container} />
-
-<Toaster />

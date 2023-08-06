@@ -1,6 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import '../app.css';
+	import { Toaster } from 'svelte-french-toast';
 
 	export let data;
 </script>
@@ -14,3 +15,4 @@
 		{/key}
 	</div>
 </div>
+<Toaster />

@@ -73,7 +73,7 @@
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="self-center p-4 cursor-grab"
+		class="self-center p-4 py-5 cursor-grab flex items-center justify-center w-full"
 		on:mousedown={mousedown}
 		on:touchstart|passive={touchstart}
 	>

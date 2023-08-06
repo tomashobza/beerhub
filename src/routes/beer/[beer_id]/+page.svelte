@@ -33,7 +33,7 @@
 		<div class="text-slate-500 text-xs">Rating</div>
 	</div>
 </div>
-<Carousel title="Available at" hasPadding={false} url="pub">
+<Carousel title="Available at:" hasPadding={false} hasBoldTitle={false} url="pub">
 	{#each Array(10) as _}
 		<PubCard />
 	{/each}

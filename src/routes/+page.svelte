@@ -7,7 +7,7 @@
 <div class="w-full h-full flex flex-col items-stretch">
 	<Map />
 	<Drawer>
-		<div class="w-full flex flex-col px-4">
+		<div class="w-full flex flex-col">
 			<Carousel />
 		</div>
 	</Drawer>

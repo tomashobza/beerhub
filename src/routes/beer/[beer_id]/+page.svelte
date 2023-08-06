@@ -11,9 +11,23 @@
 
 <div class="flex flex-row items-center gap-2">
 	<div class="font-semibold text-xl">Pilsner Urquel</div>
-	<div class="rounded bg-slate-300 text-slate-600 px-1 font-semibold">10°</div>
+	<div class="rounded bg-slate-200 text-slate-500 px-1 font-semibold">10°</div>
 	<div class="flex-grow" />
-	<div class="rounded bg-slate-300 text-slate-600 px-2 py-1 text-sm">
+	<div class="rounded bg-slate-200 text-slate-500 px-2 py-1 text-sm">
 		Rank: <span class="font-semibold">420</span>
+	</div>
+</div>
+<div class="w-full bg-slate-200 rounded-lg p-4 flex flex-row items-center justify-between">
+	<div class="flex flex-col items-center gap-1 flex-grow">
+		<div class="text-4xl">20</div>
+		<div class="text-slate-500 text-xs">Bitterness</div>
+	</div>
+	<div class="flex flex-col items-center gap-1 flex-grow">
+		<div class="text-4xl">69</div>
+		<div class="text-slate-500 text-xs">FUI</div>
+	</div>
+	<div class="flex flex-col items-center gap-1 flex-grow">
+		<div class="text-4xl">5</div>
+		<div class="text-slate-500 text-xs">Bitterness</div>
 	</div>
 </div>

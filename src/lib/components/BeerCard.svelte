@@ -4,9 +4,10 @@
 	import Star from './Star.svelte';
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="relative flex-shrink-0 h-[10rem] w-[7rem] bg-white shadow-md flex flex-col justify-end rounded-md py-2 gap-1 px-2 bg-center bg-cover overflow-hidden"
+	class="relative flex-shrink-0 h-[10rem] w-[7rem] bg-white transition-all duration-300 shadow-md hover:scale-105 hover:shadow-lg flex flex-col justify-end rounded-md py-2 gap-1 px-2 bg-center bg-cover overflow-hidden cursor-pointer"
 	style="background-image: url('https://www.pizzascuola.cz/wp-content/uploads/2018/06/IMG_9117-1.jpg')"
 	on:click={() => goto('/beer/asb')}
 >

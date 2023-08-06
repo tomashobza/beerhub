@@ -3,7 +3,6 @@
 	import '../app.css';
 
 	export let data;
-	$: console.log(data.url);
 </script>
 
 <div class="w-full h-full flex flex-col items-center justify-center p-0 sm:p-6">
